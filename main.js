@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 
 // FUNZIONI
-function slideRight(){  // nomino la funzione slideRight🐱‍👤
+function slideRight(){  //nomino la funzione slideRight🐱‍👤
   var right = $(".fa-angle-right"); //nomino la variabile da cliccare🐱‍👤
   right.click(function (){  //chiamo la funzione al click🐱‍👤
     var img = $(".images > img.active");  //definisco la variabile puntando all'immagine🐱‍👤
@@ -22,7 +22,7 @@ function slideRight(){  // nomino la funzione slideRight🐱‍👤
   })
 }
 
-function slideLeft(){ // nomino la funzione slideLeft🐱‍👤
+function slideLeft(){ //nomino la funzione slideLeft🐱‍👤
   var left = $(".fa-angle-left"); //nomino la variabile da cliccare🐱‍👤
   left.click(function(){  //chiamo la funzione al click🐱‍👤
     var img = $(".images > img.active");  //definisco la variabile puntando all'immagine🐱‍👤
