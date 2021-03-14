@@ -56,25 +56,40 @@ function prev(){  //nomino la funzione prev🐱‍👤
 }
 
 function keyboard(){
-  $(document).keyup(function (e) {  //alla pressione dei tasti sulla keyboard
-  if (e.keyCode == "39") {  //se il keycode è 39 (la freccia destra)
-    next(); //allora esegui funzione next
+  $(document).keyup(function (e) {  //alla pressione dei tasti sulla keyboard🐱‍👤
+  if (e.keyCode == "39") {  //se il keycode è 39 (la freccia destra)🐱‍👤
+    next(); //allora esegui funzione next🐱‍👤
   }
-  if (e.keyCode == "37") {  //se il keycode è 37 (freccia sinistra)
-    prev(); //allora esegui funzione prev
+  if (e.keyCode == "37") {  //se il keycode è 37 (freccia sinistra)🐱‍👤
+    prev(); //allora esegui funzione prev🐱‍👤
   }
 });
 }
 
 function dots(){
-  $('.slider-wrapper .nav i').click(function(){ //creo funzione al click sui dot
-    var dotPos = $('.slider-wrapper .nav i').index(this); //determino il numero indice del dot premuto (this)
-    var images = $('.slider-wrapper .images img');  //creo variabile per le immagini
-    $('.slider-wrapper .nav i').removeClass("active");  //al click rimuovo la classe active dai dot
-    images.removeClass("active"); //rimuovo la classe active dalle immagini
-    $(this).addClass("active"); //aggiungo la classe ative al dot premuto (this)
-    images.eq(dotPos).addClass("active"); //assegno la classe active all'immagine ecorrispondente all'indice del dot premuto (this)
+  $('.slider-wrapper .nav i').click(function(){ //creo funzione al click sui dot🐱‍👤
+    var dotPos = $('.slider-wrapper .nav i').index(this); //determino il numero indice del dot premuto (this)🐱‍👤
+    var images = $('.slider-wrapper .images img');  //creo variabile per le immagini🐱‍👤
+    $('.slider-wrapper .nav i').removeClass("active");  //al click rimuovo la classe active dai dot🐱‍👤
+    images.removeClass("active"); //rimuovo la classe active dalle immagini🐱‍👤
+    $(this).addClass("active"); //aggiungo la classe ative al dot premuto (this)🐱‍👤
+    images.eq(dotPos).addClass("active"); //assegno la classe active all'immagine ecorrispondente all'indice del dot premuto (this)🐱‍👤
     console.log(images);
     console.log(dotPos);
   })
+}
+
+function generateDots() { //non la richiamo nell'esercizio
+  var nav = $('.slider-wrapper .nav');  //creo variabile nav🐱‍👤
+  var imagesLen = $('.slider-wrapper .images img').length; //creo variabile "lunghezza img" (il numero delle immagini presenti)🐱‍👤
+  for (var i = 0; i < imagesLen; i++) { //ciclo for per generare tanti dot quante immagini ho🐱‍👤
+    if (i == 0) { // se i = 0 🐱‍👤
+      var html = nav.html() + '<i class="fas fa-circle active first"></i>'; //stampa nel DOM dot con classe "first"🐱‍👤
+    } else if (i == imagesLen - 1) {  //se i = numero immagini - 1🐱‍👤
+      var html = nav.html() + '<i class="fas fa-circle last"></i>'; //stampa nel DOM dot con classe "last"🐱‍👤
+    } else {  //altrimenti🐱‍👤
+      var html = nav.html() + '<i class="fas fa-circle"></i>';  //stampa nel DOM il dot🐱‍👤
+    }
+    nav.html(html);
+  }
 }
