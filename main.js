@@ -2,6 +2,7 @@ $(document).ready(function(){
   slideRight();
   slideLeft();
   keyboard();
+  dots();
 })
 
 
@@ -63,4 +64,17 @@ function keyboard(){
     prev(); //allora esegui funzione prev
   }
 });
+}
+
+function dots(){
+  $('.slider-wrapper .nav i').click(function(){ //creo funzione al click sui dot
+    var dotPos = $('.slider-wrapper .nav i').index(this); //determino il numero indice del dot premuto (this)
+    var images = $('.slider-wrapper .images img');  //creo variabile per le immagini
+    $('.slider-wrapper .nav i').removeClass("active");  //al click rimuovo la classe active dai dot
+    images.removeClass("active"); //rimuovo la classe active dalle immagini
+    $(this).addClass("active"); //aggiungo la classe ative al dot premuto (this)
+    images.eq(dotPos).addClass("active"); //assegno la classe active all'immagine ecorrispondente all'indice del dot premuto (this)
+    console.log(images);
+    console.log(dotPos);
+  })
 }
