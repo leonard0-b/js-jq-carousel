@@ -1,6 +1,7 @@
 $(document).ready(function(){
   slideRight();
   slideLeft();
+  keyboard();
 })
 
 
@@ -51,4 +52,15 @@ function prev(){  //nomino la funzione prev🐱‍👤
   var nav = $(".nav > .fa-circle.active");
   img.removeClass("active").prev().addClass("active");  //rimuovo la classe "active" e la passo al suo precedente diretto (prev)🐱‍👤
   nav.removeClass("active").prev().addClass("active");
+}
+
+function keyboard(){
+  $(document).keyup(function (e) {  //alla pressione dei tasti sulla keyboard
+  if (e.keyCode == "39") {  //se il keycode è 39 (la freccia destra)
+    next(); //allora esegui funzione next
+  }
+  if (e.keyCode == "37") {  //se il keycode è 37 (freccia sinistra)
+    prev(); //allora esegui funzione prev
+  }
+});
 }
